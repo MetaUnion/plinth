@@ -1,6 +1,6 @@
 # Sb::Styleguide
 
-## VERSION 2, Kiev
+## VERSION 1, Kiev
 
 TODO: Write a gem description
 
