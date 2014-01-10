@@ -18,6 +18,12 @@ class ModulesController < ApplicationController
     @page_nav = modules_nav
   end
 
+  def pagination
+    @page_title = "Pagination <small>Module</small>"
+    @page_nav = modules_nav
+  end
+
+
   def panels
     @page_title = "Panel <small>Module</small>"
     @page_description = "Without doubt, the least exciting module we have."
@@ -35,6 +41,7 @@ class ModulesController < ApplicationController
       "Alerts" => modules_alerts_path,
       "Tabs" => modules_tabs_path,
       "Navigation" => modules_nav_path,
+      "Pagination" => modules_pagination_path,
       "Panels" => modules_panels_path
       }
   end

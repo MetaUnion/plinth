@@ -19,6 +19,7 @@ Plinth::Application.routes.draw do
   get "modules/alerts", as: "modules_alerts"
   get "modules/footer", as: "modules_footer"
   get "modules/nav", as: "modules_nav"
+  get "modules/pagination", as: "modules_pagination"
   get "modules/panels", as: "modules_panels"
   get "modules/tabs", as: "modules_tabs"
 

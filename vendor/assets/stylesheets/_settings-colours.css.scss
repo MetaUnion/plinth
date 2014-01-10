@@ -85,6 +85,12 @@ $white: #fff !default;
 $shiny-edge: rgba(#fff, .8) !default;
 $dark-edge: rgba(#000, .2) !default;
 
+
+$pagination-color:          $txt-color !default;
+$pagination-hover-color:    $main-color !default;
+$pagination-active-color:   $main-color !default;
+$pagination-disabled-color: mono(3) !default;
+
 // icons
 $facebook-color: #3c5994 !default;
 $twitter-color: #2ca7c8 !default;
