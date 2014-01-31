@@ -32,7 +32,7 @@ gem 'rb-readline'
 #
 
 gem 'jquery-rails'
-
+gem 'react-rails', '~> 0.8.0.0'
 
 #
 # Javascript Testing
