@@ -7,6 +7,27 @@
 // Action list - hoz
 // ==========================================================================
 
+@mixin inline-list {
+  & > li {
+    display: inline-block;
+    margin:0;
+    @if old-ie {
+      *display: inline;
+      *zoom: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.inline-list { @include inline-list; }
+
+// ==========================================================================
+// Action list - hoz
+// ==========================================================================
+
 .action-list {
   @include clearfix();
   padding: 0;
@@ -31,18 +52,7 @@
   // Pass true to output outside
   // media query for IE
   .action-list.collapse {
-    & > li {
-      display: inline-block;
-      margin:0;
-      @if old-ie {
-        *display: inline;
-        *zoom: 1;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+    @include inline-list;
   }
 }
 
