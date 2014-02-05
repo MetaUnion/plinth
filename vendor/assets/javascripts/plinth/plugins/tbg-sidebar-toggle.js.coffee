@@ -45,10 +45,16 @@ plugin = ($)->
 
     # class that is added to the canvas when clicked
     _toggleClass: "off-canvas-active"
+    
+    # class that is toggled to self when clicked
+    _activeClass: "is-active"
 
     # Toggle the canvas -Toggle _toggleClass on the canvas when the element is clicked
     #
-    toggle : -> @$canvas.toggleClass( @_toggleClass )
+    toggle : -> 
+      @$canvas.toggleClass( @_toggleClass )
+      @$el.toggleClass( @_activeClass )
+
   
   # CLOSE PLUGIN DEFINITION
   # ==========================

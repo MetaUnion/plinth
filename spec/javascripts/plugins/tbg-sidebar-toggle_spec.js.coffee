@@ -47,3 +47,18 @@ describe 'Sidebar Toggle:', ->
       link.click()
       expect( data.$canvas.hasClass( data._toggleClass ) ).toBeFalsy()
 
+  describe 'Toggles self state class', ->
+    it "Adds active class to self when clicked", ->
+      link = $('[data-sidebarToggle]')
+      link.click()
+      data = link.data('sidebarTogglePlugin')
+      expect( data.$el.hasClass( data._activeClass ) ).toBeTruthy()
+
+    it "Removes active class to self when clicked again", ->
+      link = $('[data-sidebarToggle]')
+      link.click()
+      data = link.data('sidebarTogglePlugin')
+      expect( data.$el.hasClass( data._activeClass ) ).toBeTruthy()
+      link.click()
+      expect( data.$el.hasClass( data._activeClass ) ).toBeFalsy()
+
