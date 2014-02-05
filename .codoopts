@@ -3,7 +3,7 @@
 --title      "Codo Documentation"
 --private
 --quiet 
---output-dir ./public/javascripts
+--output ./public/javascripts
 ./vendor/assets/javascripts
 -
 LICENSE

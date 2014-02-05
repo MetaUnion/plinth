@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Codo Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Codo'>
+      Codo
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>TBGForm</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        TBGForm
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>vendor&#47;assets&#47;javascripts&#47;plinth&#47;plugins&#47;tbg-forms.js.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>FORM CLASS DEFINITION</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      How to use the class
+    </h4>
+    <pre><code class='coffeescript'>  formInstance = new TBGForm $(&#39;.my-element&#39;)
+  # Send form
+  formInstance.send()</code></pre>
+    <h4>
+      How to use the class with jQuery
+    </h4>
+    <pre><code class='coffeescript'>  $(&#39;.my-element&#39;).send()</code></pre>
+    <h4>
+      How to ensure plugin self initialises on element
+    </h4>
+    <pre><code class='coffeescript'>  &lt;form data-forms=&quot;&#47;endpoint&quot;&gt; ... &lt;&#47;form&gt;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+      <h2>Variables Summary</h2>
+      <dl class='constants'>
+  <dt id='_constructor-variable'>
+    _constructor
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>TBGForm</code></pre>
+    
+  </dd>
+</dl>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#send-dynamic'>
+        #
+(void)
+<b>send</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Send the form, calls sendRequest passing form data and url to post to 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sendRequest-dynamic'>
+        #
+(void)
+<b>sendRequest</b><span>(data, url)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Execute ajax post 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#showErrors-dynamic'>
+        #
+(void)
+<b>showErrors</b><span>(errors)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Handle form post errors - called from sendRequest error callback. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#showSuccess-dynamic'>
+        #
+(void)
+<b>showSuccess</b><span>(data)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Handle form post success - called from sendRequest success callback. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_showSuccessTemplated-dynamic'>
+        #
+(void)
+<b>_showSuccessTemplated</b><span>(data)</span>
+      </a>
+    </span>
+    <span class='note private title'>Private</span>
+    <span class='desc'>
+      Display compiled success template <p>Compile template from data-formsSuccessContent; display with data object</p>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_showSuccessPlain-dynamic'>
+        #
+(void)
+<b>_showSuccessPlain</b><span>()</span>
+      </a>
+    </span>
+    <span class='note private title'>Private</span>
+    <span class='desc'>
+      Display success with replaced content <p>Display data-formsSuccessContent HTML</p>
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-dynamic'>
+      #
+(void)
+<b>constructor</b><span>(element)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Construct a new TBGForm instance</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>element</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>form we will attach the TBGForm to </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='send-dynamic'>
+      #
+(void)
+<b>send</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Send the form, calls sendRequest passing form data and url to post to</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sendRequest-dynamic'>
+      #
+(void)
+<b>sendRequest</b><span>(data, url)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Execute ajax post</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>serialized form data </span>
+    </li>
+    <li>
+      <span class='name'>url</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>URL to post form to </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='showErrors-dynamic'>
+      #
+(void)
+<b>showErrors</b><span>(errors)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Handle form post errors - called from sendRequest error callback.</p><p>Clear previous errors, add error classes to relevent fields and labels and add error message summary</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>errors</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>errors object </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='showSuccess-dynamic'>
+      #
+(void)
+<b>showSuccess</b><span>(data)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Handle form post success - called from sendRequest success callback.</p><p>Pass empty error object to showErrors; if Handlebars defined call _showSuccessTemplated with data object otherwise call _showSuccessPlain; trigger &#39;tbgform-success&#39; event with form data; fade form if necessary</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>response from ajax post </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_showSuccessTemplated-dynamic'>
+      #
+(void)
+<b>_showSuccessTemplated</b><span>(data)</span>
+      <span class='note private'>Private</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Display compiled success template</p><p>Compile template from data-formsSuccessContent; display with data object</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>data object from showSuccess </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_showSuccessPlain-dynamic'>
+      #
+(void)
+<b>_showSuccessPlain</b><span>()</span>
+      <span class='note private'>Private</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Display success with replaced content</p><p>Display data-formsSuccessContent HTML</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  February 05, 14 12:26:35 by
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.0.6
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>
