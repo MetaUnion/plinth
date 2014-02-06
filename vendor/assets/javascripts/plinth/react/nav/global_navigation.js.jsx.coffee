@@ -31,7 +31,7 @@ App.Nav.GlobalNavigation = React.createClass
     @updatePrimaryNavigation(prevProps, prevState)
 
   loadNavigationData: ->
-    data = JSON.parse(window.navJson)
+    data = $.parseJSON(window.navJson)
     @props.primaryItems   = data.primary_navigation
     @props.secondaryItems = data.secondary_navigation
 
@@ -88,7 +88,7 @@ App.Nav.GlobalNavigation = React.createClass
     count = @state.displayCount
     block_listNodes = @blockListNodes(count)
     inline_listNodes = @inlineListNodes(count)
-    React.DOM.nav( {className:"nav-global"},
+    React.DOM.div( {className:"nav-global"},
       [
         App.Nav.PrimaryMobileNavigationSection({listNodes: block_listNodes, showSubNav: @state.showSubNav, key: "primary_mobile_nav"}),
         App.Nav.GlobalLogo({key: "logo"}),

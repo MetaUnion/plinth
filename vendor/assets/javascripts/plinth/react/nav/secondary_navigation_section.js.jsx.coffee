@@ -6,6 +6,6 @@ App.Nav.SecondaryNavigationSection = React.createClass
 
   render: ->
     listNodes = @props.secondaryItems.map (item, k)-> App.Nav.ListItem({item: item, key: "secondary_#{k}" })
-    React.DOM.section({className:'nav-global_secondary'},
+    React.DOM.div({className:'nav-global_secondary'},
         React.DOM.ul({className:'nav-global_items inline-list'}, listNodes)
     )

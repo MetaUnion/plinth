@@ -20,6 +20,7 @@ $mob: 'mobile-', 1, 20px;
 $desk: '', $columns, $column-gutter, "min", $container-width;
 
 $grids : $mob, $desk !default;
+$fixed-sidebar-size: $desk !default;
 
 $fixed-mqs: false !default;
 $old-ie: false !default;

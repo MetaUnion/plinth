@@ -252,6 +252,10 @@
         @content;
       }
     }
+    .debug{
+      font-size: $size;
+    }
+    @content;
   }
   @else {
     // output normally

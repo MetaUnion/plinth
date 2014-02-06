@@ -16,6 +16,8 @@ $nav-align: left !default;
 
 .nav-global {
   @include clearfix();
+  zoom: 1;
+  overflow: hidden;
 
   background-color: $nav-color;
   text-align: $nav-align;
