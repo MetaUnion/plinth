@@ -28,6 +28,12 @@
 // Container
 // ==========================================================================
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .container {
   width: $container-width;
   max-width: $container-max-width;
@@ -132,7 +138,6 @@
   [role="complementary"], 
   [role="main"] { 
     width: 100%;
-    padding: 0 15px;
     display: block;
     position: relative;
     z-index: 1;
@@ -143,7 +148,9 @@
   [role="complementary"] {
     margin-left: -100%;
     width: 80%;
+    height: 100%;
     float: left;
+    position: absolute;
     z-index: 2;
   }
 
@@ -176,12 +183,11 @@
       width: 20%;
       margin-left: 0;
       float: left;
-      padding: 0 15px;
     }
 
     [role="main"] {
       width: 80%;
-      padding: 0 15px;
+      padding: 0 1em;
     }
 
     &.off-canvas-active [role="main"] {

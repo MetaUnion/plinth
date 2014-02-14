@@ -96,6 +96,7 @@ nav ol {
 //    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
 
 img {
+    max-width: 100%;
     border: 0; // 1 
     -ms-interpolation-mode: bicubic; // 2 
 }
